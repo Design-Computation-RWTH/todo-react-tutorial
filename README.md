@@ -46,13 +46,13 @@ export default App;
 - There are different options to provide styling to react components:
 - By directly writing our CSS styling in the prop:
 ```Typescript
-                <div	style={{
-                        justifyContent: "center",
-                        alignItems: "center",
-                        backgroundColor: "red",
-                        alignContent: "center",
-                        display: "flex",
-                }}>...</div>
+<div	style={{
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "red",
+        alignContent: "center",
+        display: "flex",
+}}>...</div>
 ```
 - By creating a style variable:
 
@@ -338,104 +338,104 @@ return (
 - For the function, we define the input as ```props: TaskComponentProps```this way, we can, later on, extend our Type without needing to change the input of the function because we can always use ```props.something```.
 - Our ```App.tsx``` now looks like this:
 ```typescript
-    //App.tsx
+//App.tsx
 
-    import React from "react";
-    import { Task } from "./types";
-    import { TaskComponent } from "./task-component";
+import React from "react";
+import { Task } from "./types";
+import { TaskComponent } from "./task-component";
 
-    export default function App() {
+export default function App() {
 
-    const [taskTitle, setTaskTitle] = React.useState<string>("");
-    const [tasks, setTasks] = React.useState<Task[]>([]);
-    const [taskStatus, setTaskStatus] = React.useState<"open" | "in-progress"
-     | "done">("open");
-    const [taskDescription, setTaskDescription] = React.useState<string>("");
+const [taskTitle, setTaskTitle] = React.useState<string>("");
+const [tasks, setTasks] = React.useState<Task[]>([]);
+const [taskStatus, setTaskStatus] = React.useState<"open" | "in-progress"
+    | "done">("open");
+const [taskDescription, setTaskDescription] = React.useState<string>("");
 
-    function handleSubmit() {
-        setTasks([...tasks, { title: taskTitle, 
-            status: taskStatus, description: taskDescription },]);
-        setTaskTitle("");
-        setTaskDescription("");
-        setTaskStatus("open");
-    }
-    return (
-        <div style={appContainer}>
-            <div style={headerContainer}>My Todo App</div>
-            <div style={{ flexDirection: "row" }}>
-                <input
-                value={taskTitle}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => 
-                    setTaskTitle(event.target.value)
-                }
-                type="text"
-                placeholder="Enter Task Title" />
-                <input
-                value={taskDescription}
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) => 
-                    setTaskDescription(event.target.value)
-                }
-                type="text"
-                placeholder="Enter Task Description"/>
-                <select
-                value={taskStatus}
-                onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-                setTaskStatus(event.target.value as "open" | "in-progress" |
-                 "done")
-                }>			
-                    <option>open</option>
-                    <option>in-progress</option>
-                    <option>done</option>
-                </select>
-                <button onClick={handleSubmit}>Add Task</button>
-            </div>
-            <div style={taskContainer}>
-                <div style={todoColumn}>
-                    Open
-                    <div>
-                        {tasks.map((task, i) => (
-                            <TaskComponent task={task} index={i} />
-                        ))}
-                    </div>
+function handleSubmit() {
+    setTasks([...tasks, { title: taskTitle, 
+        status: taskStatus, description: taskDescription },]);
+    setTaskTitle("");
+    setTaskDescription("");
+    setTaskStatus("open");
+}
+return (
+    <div style={appContainer}>
+        <div style={headerContainer}>My Todo App</div>
+        <div style={{ flexDirection: "row" }}>
+            <input
+            value={taskTitle}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => 
+                setTaskTitle(event.target.value)
+            }
+            type="text"
+            placeholder="Enter Task Title" />
+            <input
+            value={taskDescription}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => 
+                setTaskDescription(event.target.value)
+            }
+            type="text"
+            placeholder="Enter Task Description"/>
+            <select
+            value={taskStatus}
+            onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
+            setTaskStatus(event.target.value as "open" | "in-progress" |
+                "done")
+            }>			
+                <option>open</option>
+                <option>in-progress</option>
+                <option>done</option>
+            </select>
+            <button onClick={handleSubmit}>Add Task</button>
+        </div>
+        <div style={taskContainer}>
+            <div style={todoColumn}>
+                Open
+                <div>
+                    {tasks.map((task, i) => (
+                        <TaskComponent task={task} index={i} />
+                    ))}
                 </div>
-                <div style={todoColumn}>In Progress</div>
-                <div style={todoColumn}>Done</div>
-        </div>
-        </div>
-    );
-    }
+            </div>
+            <div style={todoColumn}>In Progress</div>
+            <div style={todoColumn}>Done</div>
+    </div>
+    </div>
+);
+}
 
-    const todoColumn: React.CSSProperties = {
-        flex: 1,
-        flexDirection: "column",
-        backgroundColor: "green",
-        padding: 10,
-        margin: 10,
-        borderRadius: 10,
-    };
+const todoColumn: React.CSSProperties = {
+    flex: 1,
+    flexDirection: "column",
+    backgroundColor: "green",
+    padding: 10,
+    margin: 10,
+    borderRadius: 10,
+};
 
-    const appContainer: React.CSSProperties = {
-        flex: 1,
-        flexDirection: "column",
-        backgroundColor: "yellow",
-        height: "100vh",
-        width: "100vw",
-        display: "flex",
-    };
+const appContainer: React.CSSProperties = {
+    flex: 1,
+    flexDirection: "column",
+    backgroundColor: "yellow",
+    height: "100vh",
+    width: "100vw",
+    display: "flex",
+};
 
-    const headerContainer: React.CSSProperties = {
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "red",
-        alignContent: "center",
-        display: "flex",
-    };
+const headerContainer: React.CSSProperties = {
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "red",
+    alignContent: "center",
+    display: "flex",
+};
 
-    const taskContainer: React.CSSProperties = {
-        flex: 1,
-        flexDirection: "row",
-        display: "flex",
-    };
+const taskContainer: React.CSSProperties = {
+    flex: 1,
+    flexDirection: "row",
+    display: "flex",
+};
 ```
 
 # Step 11: Filter Tasks for the columns
