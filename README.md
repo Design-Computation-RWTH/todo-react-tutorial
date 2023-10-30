@@ -38,7 +38,7 @@ function App() {
 export default App;
 ```
 - See how the website is now without styling.
-![[Pasted image 20231030105249.png]]
+![](images/Pasted%20image%2020231030105249.png)
 # Step 5: Simple HTML
 - Let us create a very simple page with a header and three columns for the different ToDo States (Open, in Progress, Done).
 - We use Flex Box to create the layout (Link).
