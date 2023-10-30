@@ -592,4 +592,4 @@ React.useEffect(() => {
 ![](images/Pasted%20image%2020231030144528.png)
 
 # Next Steps:
-Next, we want to take a look how we can install and use a component library in React, that is taking care of the styling for our application. Therefore, switch to the Branch "Advanced Styling" and follow the instructions in the README.md file.
+Next, we want to take a look at how we can install and use a component library in React that is taking care of the styling for our application. Therefore, switch to the Branch [Advanced Styling](https://github.com/Design-Computation-RWTH/todo-react-tutorial/tree/Advanced-Styling) and follow the instructions in the README.md file.
