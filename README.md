@@ -3,7 +3,7 @@ In this tutorial, we will learn the Basics of React and Typescript to create a l
 ![](images/Pasted%20image%2020231030144528.png)
 
 # Prerequisites
-Make sure that you have NodeJS and Visual Studio Code (or any other IDE) installed on your machine, and add NodeJS to the PATH variable of your device (if not done so by the installation process).
+Ensure that you have NodeJS, Typescript and Visual Studio Code (or any other IDE) installed on your machine, and add NodeJS to the PATH variable of your device (if not done so by the installation process). You can install Typescript after installing NodeJS using ```npm install -g typescript```.
 
 # Step 1: Create Application
 - Create a react app called "todo-tutorial".
