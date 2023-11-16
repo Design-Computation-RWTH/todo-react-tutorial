@@ -511,7 +511,7 @@ export default function App() {
 - In the ```TaskComponent```, we need to add the onChange event to the props and define in the component what should happen if we select another value in the select component:
 
 ```typescript
-// App.tsx
+// task-component.tsx
 import { Task } from "./types";
 
 type TaskComponentProps = {
